@@ -55,6 +55,40 @@ GenerateClassCluster=0
 DocumentUniqueId=KEDXBZTI
 
 [Document2]
+DocumentPath=..\Seawolf-Libraries\capacitor_murata_0805\capacitor_murata_0805$.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=XNXQOJGC
+
+[Document3]
+DocumentPath=..\Seawolf-Libraries\Panasonic_resistor_0805\Panasonic_ERJ_0805.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=PNQFXCMA
+
+[Document4]
 DocumentPath=MOSFET for Reverse Voltage Controller.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -71,7 +105,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SCSTUXGK
 
-[Document3]
+[Document5]
 DocumentPath=Zenor Diode for Reverse Voltage Controller.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -88,7 +122,41 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BJNWPZFP
 
-[Document4]
+[Document6]
+DocumentPath=..\Seawolf-Libraries\capacitor_murata_0805\capacitor_murata_0805$.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=CSVIYIJY
+
+[Document7]
+DocumentPath=..\Seawolf-Libraries\Panasonic_resistor_0805\Panasonic_ERJ_0805.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=KVVEVHKU
+
+[Document8]
 DocumentPath=Zenor Diode.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -105,7 +173,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TQWWECYW
 
-[Document5]
+[Document9]
 DocumentPath=Load Ballancing Circuit PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
