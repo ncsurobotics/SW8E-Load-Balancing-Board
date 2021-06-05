@@ -1,0 +1,420 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">6/5/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4:29:34 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc" class="file"><acronym title="C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc">C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">4</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">20</td></tr>
+</table>
+</td>
+</table><a name="IDNEDO5MQQ2NQLD2YXOLOIH1KBKEDTWFPBUUBNJ3NVCGMTEQ0B3GAD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOOZ1NBWZFOUGJED121U5KDJDRNLOBA3BEWCXQIP1MWFH2S01QTDG">Zero hole size multi-layer pad(s) detected</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXOJ1AAF4CHIUCFJHX5YS3VOQUOC5KTWFOIZ0DOLQICPY0OTNSJSB">Multilayer Pads with 0 size Hole found</a></td>
+<td class="column2">2</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">4</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID30SLUGBG1DMBE102MH1ACIKNONYC3PLFSCT2Z5MI2IKODHLWOORG">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSEVBLPZI3HNNNDXVIREZMQLHSITY1TNR01YWNPJ4CWTQKH4D0Q1">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWMZCUAWZQAA4EPS1OC4MNWFE1GD4CKXGQTCERXLPXBWXX34MS3RG">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTRDRVIXLZRINFJBBJKB53IKYGDLUKIEDPISRMSDLOA2FCMCAXUP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFRSXICOLLHJXCEDE5G3GFAQWWJ0IYOI2SOGJV3CXKOKTKNZ1LVJE">Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1MA2TUCZVH3CJFH50ITBDDXFILCCUU5GKGWSZ4E4JPD2OLLIIHAJ">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYFUC23RKQKW0E5NCSRGWFYBMEJ0G3NULETF0OWZG53ZAVK4SAH">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHXZICCMIVCQBEHJ0DXKOOYDVIGZ2ZPAAYCYFCTEDDGRJOMJD1RLB">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH0K2XYWB5N5EDW3TWUY2GPORZGEMB1XXWYJDVUJR3W1UCTNZKARH">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUCAJ4VZXAKJOIW3NHIC1B2PNKOP4UIRUZRWZGHKP30ONQAHAZ52I">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCAZUWR0VAD3LLFEG0LCTTZEICL25PYMJ32RRU3NF0UP2OVWLHDCN">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDY0GBPA4ETWMRITX55YA3DTQJEJRRO5KEHG3TWJEF2GU2A1IY1V3P">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWAPL11SXKM5FLDE4D4K5ZNYZ4IL4HVTMBQKBTFH1GSMUPBRMHG4P">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">20</td>
+</tr>
+</table><br><a name="ID2SEY34MB5F0AGDV1OXM31JEK5L3FGL0YEEJT0JB5LKPPHBBZB2OG"><h2>Warnings</h2></a><a name="IDOOZ1NBWZFOUGJED121U5KDJDRNLOBA3BEWCXQIP1MWFH2S01QTDG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Zero hole size multi-layer pad(s) detected</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2616mil|Location2.X=2684mil|Location1.Y=3856mil|Location2.Y=3904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2616mil|Location2.X=2684mil|Location1.Y=3856mil|Location2.Y=3904mil|Absolute=True">Pad R2-2(2650mil,3880mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.756mil|Location2.X=3194mil|Location1.Y=3060.902mil|Location2.Y=4096.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.756mil|Location2.X=3194mil|Location1.Y=3060.902mil|Location2.Y=4096.244mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3106mil|Location2.X=3174mil|Location1.Y=3851mil|Location2.Y=3899mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3106mil|Location2.X=3174mil|Location1.Y=3851mil|Location2.Y=3899mil|Absolute=True">Pad R1-2(3140mil,3875mil) on Multi-Layer</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.756mil|Location2.X=3194mil|Location1.Y=3060.902mil|Location2.Y=4096.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2343.756mil|Location2.X=3194mil|Location1.Y=3060.902mil|Location2.Y=4096.244mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDXOJ1AAF4CHIUCFJHX5YS3VOQUOC5KTWFOIZ0DOLQICPY0OTNSJSB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Multilayer Pads with 0 size Hole found</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2616mil|Location2.X=2684mil|Location1.Y=3856mil|Location2.Y=3904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2616mil|Location2.X=2684mil|Location1.Y=3856mil|Location2.Y=3904mil|Absolute=True">Pad R2-2(2650mil,3880mil) on Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3106mil|Location2.X=3174mil|Location1.Y=3851mil|Location2.Y=3899mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3106mil|Location2.X=3174mil|Location1.Y=3851mil|Location2.Y=3899mil|Absolute=True">Pad R1-2(3140mil,3875mil) on Multi-Layer</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDH0K2XYWB5N5EDW3TWUY2GPORZGEMB1XXWYJDVUJR3W1UCTNZKARH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.856mil|Location2.X=3104.106mil|Location1.Y=3029.965mil|Location2.Y=3041.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.856mil|Location2.X=3104.106mil|Location1.Y=3029.965mil|Location2.Y=3041.215mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U1-1(3124.967mil,3048.386mil) on Top Layer And Pad U1-2(3124.967mil,3022.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.856mil|Location2.X=3104.106mil|Location1.Y=3004.375mil|Location2.Y=3015.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.856mil|Location2.X=3104.106mil|Location1.Y=3004.375mil|Location2.Y=3015.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U1-2(3124.967mil,3022.795mil) on Top Layer And Pad U1-3(3124.967mil,2997.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.856mil|Location2.X=3104.106mil|Location1.Y=2978.784mil|Location2.Y=2990.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3092.856mil|Location2.X=3104.106mil|Location1.Y=2978.784mil|Location2.Y=2990.034mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U1-3(3124.967mil,2997.205mil) on Top Layer And Pad U1-4(3124.967mil,2971.614mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.922mil|Location2.X=3274.172mil|Location1.Y=2978.784mil|Location2.Y=2990.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.922mil|Location2.X=3274.172mil|Location1.Y=2978.784mil|Location2.Y=2990.034mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U1-5(3295.033mil,2971.614mil) on Top Layer And Pad U1-6(3295.033mil,2997.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.922mil|Location2.X=3274.172mil|Location1.Y=3004.375mil|Location2.Y=3015.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.922mil|Location2.X=3274.172mil|Location1.Y=3004.375mil|Location2.Y=3015.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U1-6(3295.033mil,2997.205mil) on Top Layer And Pad U1-7(3295.033mil,3022.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.922mil|Location2.X=3274.172mil|Location1.Y=3029.965mil|Location2.Y=3041.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3262.922mil|Location2.X=3274.172mil|Location1.Y=3029.965mil|Location2.Y=3041.215mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U1-7(3295.033mil,3022.795mil) on Top Layer And Pad U1-8(3295.033mil,3048.386mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.856mil|Location2.X=3109.106mil|Location1.Y=3429.965mil|Location2.Y=3441.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.856mil|Location2.X=3109.106mil|Location1.Y=3429.965mil|Location2.Y=3441.215mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U2-1(3129.967mil,3448.386mil) on Top Layer And Pad U2-2(3129.967mil,3422.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.856mil|Location2.X=3109.106mil|Location1.Y=3404.375mil|Location2.Y=3415.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.856mil|Location2.X=3109.106mil|Location1.Y=3404.375mil|Location2.Y=3415.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U2-2(3129.967mil,3422.795mil) on Top Layer And Pad U2-3(3129.967mil,3397.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.856mil|Location2.X=3109.106mil|Location1.Y=3378.784mil|Location2.Y=3390.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3097.856mil|Location2.X=3109.106mil|Location1.Y=3378.784mil|Location2.Y=3390.034mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U2-3(3129.967mil,3397.205mil) on Top Layer And Pad U2-4(3129.967mil,3371.614mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3267.922mil|Location2.X=3279.172mil|Location1.Y=3378.784mil|Location2.Y=3390.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3267.922mil|Location2.X=3279.172mil|Location1.Y=3378.784mil|Location2.Y=3390.034mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U2-5(3300.033mil,3371.614mil) on Top Layer And Pad U2-6(3300.033mil,3397.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3267.922mil|Location2.X=3279.172mil|Location1.Y=3404.375mil|Location2.Y=3415.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3267.922mil|Location2.X=3279.172mil|Location1.Y=3404.375mil|Location2.Y=3415.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U2-6(3300.033mil,3397.205mil) on Top Layer And Pad U2-7(3300.033mil,3422.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3267.922mil|Location2.X=3279.172mil|Location1.Y=3429.965mil|Location2.Y=3441.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3267.922mil|Location2.X=3279.172mil|Location1.Y=3429.965mil|Location2.Y=3441.215mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.105mil &lt; 10mil) Between Pad U2-7(3300.033mil,3422.795mil) on Top Layer And Pad U2-8(3300.033mil,3448.386mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDUCAJ4VZXAKJOIW3NHIC1B2PNKOP4UIRUZRWZGHKP30ONQAHAZ52I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3102.993mil|Location2.X=3114.243mil|Location1.Y=3926.611mil|Location2.Y=3937.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3102.993mil|Location2.X=3114.243mil|Location1.Y=3926.611mil|Location2.Y=3937.861mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R1-1(3140mil,3955mil) on Top Layer And Track (3105mil,3905mil)(3105mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.757mil|Location2.X=3177.007mil|Location1.Y=3926.611mil|Location2.Y=3937.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.757mil|Location2.X=3177.007mil|Location1.Y=3926.611mil|Location2.Y=3937.861mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R1-1(3140mil,3955mil) on Top Layer And Track (3175mil,3905mil)(3175mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3102.993mil|Location2.X=3114.243mil|Location1.Y=3892.139mil|Location2.Y=3903.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3102.993mil|Location2.X=3114.243mil|Location1.Y=3892.139mil|Location2.Y=3903.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R1-2(3140mil,3875mil) on Multi-Layer And Track (3105mil,3905mil)(3105mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.757mil|Location2.X=3177.007mil|Location1.Y=3892.139mil|Location2.Y=3903.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.757mil|Location2.X=3177.007mil|Location1.Y=3892.139mil|Location2.Y=3903.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R1-2(3140mil,3875mil) on Multi-Layer And Track (3175mil,3905mil)(3175mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2612.993mil|Location2.X=2624.243mil|Location1.Y=3931.611mil|Location2.Y=3942.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2612.993mil|Location2.X=2624.243mil|Location1.Y=3931.611mil|Location2.Y=3942.861mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R2-1(2650mil,3960mil) on Top Layer And Track (2615mil,3910mil)(2615mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2675.757mil|Location2.X=2687.007mil|Location1.Y=3931.611mil|Location2.Y=3942.861mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2675.757mil|Location2.X=2687.007mil|Location1.Y=3931.611mil|Location2.Y=3942.861mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R2-1(2650mil,3960mil) on Top Layer And Track (2685mil,3910mil)(2685mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2612.993mil|Location2.X=2624.243mil|Location1.Y=3897.139mil|Location2.Y=3908.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2612.993mil|Location2.X=2624.243mil|Location1.Y=3897.139mil|Location2.Y=3908.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R2-2(2650mil,3880mil) on Multi-Layer And Track (2615mil,3910mil)(2615mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2675.757mil|Location2.X=2687.007mil|Location1.Y=3897.139mil|Location2.Y=3908.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2675.757mil|Location2.X=2687.007mil|Location1.Y=3897.139mil|Location2.Y=3908.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.18mil &lt; 10mil) Between Pad R2-2(2650mil,3880mil) on Multi-Layer And Track (2685mil,3910mil)(2685mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

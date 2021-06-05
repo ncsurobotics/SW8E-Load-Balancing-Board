@@ -1,0 +1,76 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\jte40\Load-Balancing-Board\Load Ballancing Circuit PCB.PcbDoc
+Date     : 6/5/2021
+Time     : 4:29:34 PM
+
+WARNING: Zero hole size multi-layer pad(s) detected
+   Pad R2-2(2650mil,3880mil) on Multi-Layer on Net GND
+   Pad R1-2(3140mil,3875mil) on Multi-Layer on Net GND
+
+WARNING: Multilayer Pads with 0 size Hole found
+   Pad R2-2(2650mil,3880mil) on Multi-Layer
+   Pad R1-2(3140mil,3875mil) on Multi-Layer
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U1-1(3124.967mil,3048.386mil) on Top Layer And Pad U1-2(3124.967mil,3022.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U1-2(3124.967mil,3022.795mil) on Top Layer And Pad U1-3(3124.967mil,2997.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U1-3(3124.967mil,2997.205mil) on Top Layer And Pad U1-4(3124.967mil,2971.614mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U1-5(3295.033mil,2971.614mil) on Top Layer And Pad U1-6(3295.033mil,2997.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U1-6(3295.033mil,2997.205mil) on Top Layer And Pad U1-7(3295.033mil,3022.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U1-7(3295.033mil,3022.795mil) on Top Layer And Pad U1-8(3295.033mil,3048.386mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U2-1(3129.967mil,3448.386mil) on Top Layer And Pad U2-2(3129.967mil,3422.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U2-2(3129.967mil,3422.795mil) on Top Layer And Pad U2-3(3129.967mil,3397.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U2-3(3129.967mil,3397.205mil) on Top Layer And Pad U2-4(3129.967mil,3371.614mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U2-5(3300.033mil,3371.614mil) on Top Layer And Pad U2-6(3300.033mil,3397.205mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U2-6(3300.033mil,3397.205mil) on Top Layer And Pad U2-7(3300.033mil,3422.795mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (6.105mil < 10mil) Between Pad U2-7(3300.033mil,3422.795mil) on Top Layer And Pad U2-8(3300.033mil,3448.386mil) on Top Layer [Top Solder] Mask Sliver [6.105mil]
+Rule Violations :12
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R1-1(3140mil,3955mil) on Top Layer And Track (3105mil,3905mil)(3105mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R1-1(3140mil,3955mil) on Top Layer And Track (3175mil,3905mil)(3175mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R1-2(3140mil,3875mil) on Multi-Layer And Track (3105mil,3905mil)(3105mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R1-2(3140mil,3875mil) on Multi-Layer And Track (3175mil,3905mil)(3175mil,3925mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R2-1(2650mil,3960mil) on Top Layer And Track (2615mil,3910mil)(2615mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R2-1(2650mil,3960mil) on Top Layer And Track (2685mil,3910mil)(2685mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R2-2(2650mil,3880mil) on Multi-Layer And Track (2615mil,3910mil)(2615mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (6.18mil < 10mil) Between Pad R2-2(2650mil,3880mil) on Multi-Layer And Track (2685mil,3910mil)(2685mil,3930mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.18mil]
+Rule Violations :8
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 20
+Waived Violations : 0
+Time Elapsed        : 00:00:02
