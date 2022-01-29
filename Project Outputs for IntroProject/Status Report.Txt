@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [IntroProject.PrjPcb]
+   Generated File[Load Ballancing Circuit PCB.TXT]
+   Generated File[Load Ballancing Circuit PCB.DRL]
+   Generated File[Load Ballancing Circuit PCB.LDP]
+   Generated File[Load Ballancing Circuit PCB.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 5:20:10 PM On 6/12/2021
