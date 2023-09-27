@@ -1267,6 +1267,23 @@
     )
   )
 
+  (sheet (at 184.15 135.89) (size 27.94 34.29) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 06e37958-9d39-4a77-96cb-ce86c29d49d3)
+    (property "Sheetname" "Voltage and Current Monitoring" (at 184.15 135.1784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "VIM.kicad_sch" (at 184.15 170.7646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Load Ballancing Circuit"
+        (path "/3c80be29-1084-4d09-9b70-344866d482c5" (page "1"))
+      )
+    )
+  )
+
   (sheet_instances
     (path "/" (page "#"))
   )
